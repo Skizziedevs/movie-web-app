@@ -7,7 +7,7 @@
       <h2 class="pt-[24px] pl-[24px] md:pt-[32px] md:pl-[32px] pb-[33px]">
         Sign Up
       </h2>
-      <form  @submit="this.$router.push('/home')" >
+      <form   >
         <div
           class="input w-[298px] h-[37px] md:w-[336px] md:h-[37px] mx-auto mb-[33px]"
         >
@@ -93,15 +93,17 @@
             password can't be empty
           </h4><h1 class="text-red-500 text-[12px] relative bottom-10 left-[180px]">{{ error }}</h1>
         </div>
-   <button >
+
         <button
           type="submit"
+          @submit.prevent="handleSubmit()"
          @click="handleSignup()"
           class="ml-[14.5px] md:ml-[30.5px] hover:bg-white hover:text-black rounded-[6px] text-white w-[298px] h-[48px] md:w-[336px] bg-pinkishred"
         >
         Sign Up
         </button>
-</button>
+       
+
         <div class="text-center pt-[21px]">
           <h3  class="text-white">
             Already have an account?
@@ -117,7 +119,8 @@
 
 <script setup>
 import { ref, computed } from "vue";
-
+ import { useRouter } from 'vue-router';
+const router = useRouter();
 const error = ref("");
 const email = ref("");
 const password = ref("");
@@ -126,9 +129,7 @@ const showEmailError = ref(false);
 const showPasswordError = ref(false);
 const showRepeatPasswordError = ref(false);
 const pwSame = ref(false)
-const isLoginDisabled = computed(() => {
-  return !email.value || !password.value;
-});
+
 
 const checkEmail = () => {
   if (email.value === "") {
@@ -156,13 +157,21 @@ const checkRepeatpassword = () => {
 
 
 const matcherror = () =>{
-  if (password.value != repeatpassword.value ){
-    error.value = "passwords are not the same";
-    pwSame.value = false;
-  } else{
-    error.value ="";
+  if (password.value = repeatpassword.value ){
+    error.value = "";
     pwSame.value = true;
+  } else{
+    error.value ="passwords are not the same";
+    pwSame.value = false;
   }
+}
+
+const handleSubmit = () => {
+  handleSignup(); // Call your validation logic
+  if (pwSame.value = true) {
+    
+    router.push('/home');
+} else(console.log(pwSame))
 }
 const handleSignup = () => {
   
@@ -170,7 +179,7 @@ const handleSignup = () => {
   checkPassword();
   checkRepeatpassword();
   matcherror();
-  console.log(pwSame)
+  
 
 };
 

@@ -1,6 +1,6 @@
 <template>
-<font-awesome-icon icon="fa-solid fa-clapperboard" class="mx-auto relative left-[48%] top-[100px] text-pinkishred  w-[32px] h-[25.8px]"/>
-  <div class="flex items-center justify-center h-screen">
+
+  <div class="flex items-center  justify-center h-screen">
     
     <div
       class="box w-[327px] bg-smokeblack mx-auto items-center my-auto h-[365px] flex-shrink-0 rounded-[10px] md:w-[400px] md-h-[373px]"

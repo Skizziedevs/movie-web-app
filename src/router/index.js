@@ -11,20 +11,26 @@ import Bookmarked from '../views/Bookmarked.vue'
 const routes =[
     {path: '/', component: Layout , 
     meta: {
-        hideNavbar: false,
+        hideNavbar: true,
     }},
     {path: '/signup', component: Signup, meta: {
-        hideNavbar: false,
+        hideNavbar: true,
     }},
     {path: '/login', component: Login,  meta: {
         hideNavbar: true,
     }},
     {path: '/home', component: Home, meta: {
-        hideNavbar: true,
+        hideNavbar: false,
     } },
-    {path: '/movies', component: Movies },
-    {path: '/tvseries', component: Tvseries },
-    {path: '/bookmarked', component: Bookmarked },
+    {path: '/movies', component: Movies, meta: {
+        hideNavbar: false,
+    } },
+    {path: '/tvseries', component: Tvseries, meta: {
+        hideNavbar: false,
+    } },
+    {path: '/bookmarked', component: Bookmarked, meta: {
+        hideNavbar: false,
+    } },
    
 
 ]
