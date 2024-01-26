@@ -1,8 +1,5 @@
 <template>
-  <font-awesome-icon
-    icon="fa-solid fa-clapperboard"
-    class="mx-auto relative left-[48%] top-[90px] text-pinkishred w-[32px] h-[25.8px]"
-  />
+  
   <div class="flex items-center justify-center h-screen">
     <div
       class="box w-[327px] bg-smokeblack mx-auto items-center my-auto h-[412px] flex-shrink-0 rounded-[10px] md:w-[400px] md:h-[428px]"
@@ -10,7 +7,7 @@
       <h2 class="pt-[24px] pl-[24px] md:pt-[32px] md:pl-[32px] pb-[33px]">
         Sign Up
       </h2>
-      <form  @submit="this.$router.push('/home')">
+      <form  @submit="this.$router.push('/home')" >
         <div
           class="input w-[298px] h-[37px] md:w-[336px] md:h-[37px] mx-auto mb-[33px]"
         >
@@ -66,7 +63,7 @@
             class="text-red-500 text-[12px] relative bottom-10 left-[180px]"
           >
             Password can't be empty
-          </h4>
+          </h4><h1  class="text-red-500 text-[12px] relative bottom-10 left-[180px]">{{ error }}</h1>
         </div>
         <div
           class="input w-[298px] h-[37px] md:w-[336px] md:h-[37px] mx-auto mb-[33px]"
@@ -94,22 +91,22 @@
             class="text-red-500 text-[12px] relative bottom-10 left-[180px]"
           >
             password can't be empty
-          </h4>
+          </h4><h1 class="text-red-500 text-[12px] relative bottom-10 left-[180px]">{{ error }}</h1>
         </div>
-
+   <button >
         <button
           type="submit"
-          @click="handleSignup()"
+         @click="handleSignup()"
           class="ml-[14.5px] md:ml-[30.5px] hover:bg-white hover:text-black rounded-[6px] text-white w-[298px] h-[48px] md:w-[336px] bg-pinkishred"
         >
-        <router-link to="/home">Sign Up</router-link>
+        Sign Up
         </button>
-
+</button>
         <div class="text-center pt-[21px]">
-          <h3 class="text-white">
+          <h3  class="text-white">
             Already have an account?
             <router-link to="/login">
-              <span class="text-pinkishred">Log in</span></router-link
+              <span  class="text-pinkishred">Log in</span></router-link
             >
           </h3>
         </div>
@@ -121,13 +118,14 @@
 <script setup>
 import { ref, computed } from "vue";
 
+const error = ref("");
 const email = ref("");
 const password = ref("");
 const repeatpassword = ref("");
 const showEmailError = ref(false);
 const showPasswordError = ref(false);
 const showRepeatPasswordError = ref(false);
-
+const pwSame = ref(false)
 const isLoginDisabled = computed(() => {
   return !email.value || !password.value;
 });
@@ -154,11 +152,26 @@ const checkRepeatpassword = () => {
   }
 };
 
+
+
+
+const matcherror = () =>{
+  if (password.value != repeatpassword.value ){
+    error.value = "passwords are not the same";
+    pwSame.value = false;
+  } else{
+    error.value ="";
+    pwSame.value = true;
+  }
+}
 const handleSignup = () => {
   
   checkEmail();
   checkPassword();
   checkRepeatpassword();
+  matcherror();
+  console.log(pwSame)
+
 };
 
 const isInputFocused = ref(false);

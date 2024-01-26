@@ -1,12 +1,12 @@
 <template>
 
-  
+<div class="pl-[6px] lg:pl-[140px]">
     <div class="w-[370px] md:w-[725px] lg:w-[1240px] mx-auto pt-[26px] md:pt-[32px]">
         <h2 class="text-[20px] md:text-[32px] regular lg:pl-[25px] pb-[24px] pt-[34px]">Tv series</h2>
     </div>
     
     <div
-    class="grid grid-cols-2  gap-x-[15px] md:grid-cols-3 lg:grid-cols-4 gap-y-[10px] g lg:gap-x-[32px] lg:gap-y-[40px] w-[370px] md:w-[725px] lg:w-[1240px] mx-auto"
+    class="grid grid-cols-2  gap-x-[15px] md:grid-cols-3 lg:grid-cols-4 gap-y-[10px] g lg:gap-x-[4px] lg:gap-y-[40px] w-[370px] md:w-[725px] lg:w-[1240px] mx-auto"
   >
 
     <div
@@ -45,6 +45,7 @@
         </h2>
       </div>
     </div>
+  </div>
   </div>
     </template>
     

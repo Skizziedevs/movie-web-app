@@ -2,7 +2,7 @@
   
     <div class="pl-[6px] lg:pl-[150px]">
     <div class="w-[370px] md:w-[725px] lg:w-[1240px] mx-auto pt-[26px] md:pt-[32px]">
-        <h2 class="text-[20px] md:text-[32px] regular lg:pl-[25px] pb-[24px] pt-[34px]">Movies</h2>
+        <h2 class="text-[20px] md:text-[32px] regular lg:pl-[25px] pb-[24px] pt-[34px]">Bookmarked Movies</h2>
     </div>
     
     <div
@@ -51,7 +51,7 @@
 </div>
   <div class="pl-[6px] lg:pl-[150px]">
   <div class="w-[370px] md:w-[725px] lg:w-[1240px] mx-auto pt-[26px] md:pt-[32px]">
-        <h2 class="text-[20px] md:text-[32px] regular lg:pl-[25px] pb-[24px] pt-[34px]">Tv series</h2>
+        <h2 class="text-[20px] md:text-[32px] regular lg:pl-[25px] pb-[24px] pt-[34px]">Bookmarked Tv series</h2>
     </div>
     
     <div

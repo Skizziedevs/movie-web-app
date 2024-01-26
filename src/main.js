@@ -30,6 +30,7 @@ const app = createApp(App);
 // Use the router plugin
 app.use(router);
 
+
 // Register the global component for FontAwesome
 app.component('font-awesome-icon', FontAwesomeIcon);
 
