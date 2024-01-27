@@ -7,7 +7,7 @@
       <h2 class="pt-[24px] pl-[24px] md:pt-[32px] md:pl-[32px] pb-[33px]">
         Sign Up
       </h2>
-      <form   >
+      <form   @submit.prevent="handleSubmit()" >
         <div
           class="input w-[298px] h-[37px] md:w-[336px] md:h-[37px] mx-auto mb-[33px]"
         >
@@ -96,7 +96,7 @@
 
         <button
           type="submit"
-          @submit.prevent="handleSubmit()"
+         
          @click="handleSignup()"
           class="ml-[14.5px] md:ml-[30.5px] hover:bg-white hover:text-black rounded-[6px] text-white w-[298px] h-[48px] md:w-[336px] bg-pinkishred"
         >
