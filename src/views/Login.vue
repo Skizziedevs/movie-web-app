@@ -6,7 +6,7 @@
       class="box w-[327px] bg-smokeblack mx-auto items-center my-auto h-[365px] flex-shrink-0 rounded-[10px] md:w-[400px] md-h-[373px]"
     >
       <h2 class="pt-[24px] pl-[24px] md:pt-[32px] md:pl-[32px] pb-[33px] ">Login</h2>
-      <form  @submit.prevent="this.$router.push('/home')" >
+      <form  @submit.prevent="$router.push('/home')" >
         <div class=" input w-[298px] h-[37px] md:w-[336px] md:h-[37px] mx-auto mb-[38px]">
           <label for="email" class="pl-[16px] md:pl-[24px]" :class="{ 'opacity-0': email.length > 0, 'invisible': email.length > 0 }">Email address</label>
           <input class="bg-smokeblack focus:outline-none text-white border-b-2 h-[30px] border-white" @focus="handleInputFocus"

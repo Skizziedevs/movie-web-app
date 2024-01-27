@@ -32,7 +32,7 @@ const setIcon = (icon) => {
     </div>
     <div>
       <img
-        src="../../assets/image-avatar.png"
+        src="../../public/assets/image-avatar.png"
         class="w-[24px] h-[24px] md:w-[32px] md:h-[32px] lg:h-[40px] lg:mb-[24px] lg:w-[40px]"
         alt=""
       />
