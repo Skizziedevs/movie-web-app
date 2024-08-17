@@ -1,28 +1,42 @@
 <template>
-<div class="w-[370px] md:w-[725px] lg:w-[1240px] mx-auto">
-    <h2 class="text-[20px] md:text-[32px] regular pb-[24px]">Recommended for you</h2>
-</div>
+  <div class="w-[370px] md:w-[725px] relative left-[4px] lg:w-[1240px] mx-auto">
+    <h2 class="text-[20px] md:text-[32px] regular pb-[24px]">
+      Recommended for you
+    </h2>
+  </div>
 
   <div
-    class="grid grid-cols-2  gap-x-[15px] md:grid-cols-3 lg:grid-cols-4 gap-y-[10px] g lg:gap-x-[32px] lg:gap-y-[40px] w-[370px] md:w-[725px] lg:w-[1240px] mx-auto"
+    class="grid grid-cols-2 relative left-[4px] gap-x-[0px] md:grid-cols-3 lg:grid-cols-4 gap-y-[10px] g lg:gap-x-[32px] lg:gap-y-[40px] w-[375px] md:w-[725px] lg:w-[1240px] mx-auto"
   >
-
     <div
       v-for="movie in nonTrendingMovies"
       :key="movie.id"
       class="pb-[12px] card cursor-pointer"
     >
-      <div class="rounded-[8px] card w-[164px] h-[110px] md:w-[220px] md:h-[140px] lg:w-[280px] lg:h-[174px]"
-      :style="{
-            backgroundImage: movie.thumbnail?.regular?.small
-              ? `url('${movie.thumbnail.regular.small}')`
-              : '',
-          }">
-         <div @click="movie.isBookmarked = !movie.isBookmarked" class=" w-[32px] h-[32px] bg-gray-600 opacity-[0.8] relative top-[8px] md:top-[15px] md:left-[173px] lg:left-[230px] left-[124px] cursor-pointer rounded-full"><font-awesome-icon icon="fa-solid fa-bookmark" :class="{ 'text-white': movie.isBookmarked }" class="pl-[9.3px] pt-[7px] "   /></div>
+      <div
+        class="rounded-[8px] card w-[164px] h-[110px] md:w-[220px] md:h-[140px] lg:w-[280px] lg:h-[174px]"
+        :style="{
+          backgroundImage: movie.thumbnail?.regular?.small
+            ? `url('${movie.thumbnail.regular.small}')`
+            : '',
+        }"
+      >
+        <div
+          @click="movie.isBookmarked = !movie.isBookmarked"
+          class="w-[32px] h-[32px] bg-gray-600 opacity-[0.8] relative top-[8px] md:top-[15px] md:left-[173px] lg:left-[230px] left-[124px] cursor-pointer rounded-full"
+        >
+          <font-awesome-icon
+            icon="fa-solid fa-bookmark"
+            :class="{ 'text-white': movie.isBookmarked }"
+            class="pl-[9.3px] pt-[7px]"
+          />
+        </div>
       </div>
       <div class="pt-[8px]">
         <div class="flex">
-          <h3 class="text-[12px] md:text-[15px] mdl:text-[17px] text-white pr-[3px]">
+          <h3
+            class="text-[12px] md:text-[15px] mdl:text-[17px] text-white pr-[3px]"
+          >
             {{ movie.year }}
           </h3>
           <span class="w-[2px] h-[2px] bg-white mt-[8px] mx-[6px]"></span>
@@ -54,25 +68,22 @@ const movies = jsonData;
 const nonTrendingMovies = ref(
   movies.filter((movie) => !movie.thumbnail || !movie.thumbnail.trending)
 );
-
-
 </script>
 
 <style scoped>
 .card {
   background-size: cover;
   background-position: center;
-  
+
   flex-shrink: 0;
 }
 .regular {
-  color: var(--Pure-White, #FFF);
-font-family: Outfit;
+  color: var(--Pure-White, #fff);
+  font-family: Outfit;
 
-font-style: normal;
-font-weight: 300;
-line-height: normal;
-letter-spacing: -0.312px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.312px;
 }
-
 </style>
